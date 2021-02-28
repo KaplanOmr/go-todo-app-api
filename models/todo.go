@@ -22,3 +22,8 @@ type TodoDateMappings struct {
 type TodoList struct {
 	Todo []Todo `json:"todo"`
 }
+
+type RespondNotice struct {
+	Status string `json:"status"`
+	Notice string `json:"notice"`
+}

@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "e969c51a-1277-405d-ab45-16c811fdc6f8",
+		"name": "golang-todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/get/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"Baslik\",\r\n    \"description\" : \"aciklama\",\r\n    \"status\" : \"open\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8081/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/getdate/2021-02-27",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"getdate",
+						"2021-02-27"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/delete/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"Baslik-aa1\",\r\n    \"description\" : \"aciklama 3\",\r\n    \"status\" : \"open\",\r\n    \"id\" : 11\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8081/up",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"up"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

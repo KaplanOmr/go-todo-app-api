@@ -52,19 +52,21 @@ func GetDateTodo(w http.ResponseWriter, r *http.Request) {
 
 func UpTodo(w http.ResponseWriter, r *http.Request) {
 	var todo Todo
-	var respond string
+	var resNot RespondNotice
 	err := json.NewDecoder(r.Body).Decode(&todo)
 	CheckErr(err)
 
 	upCheck := database.Up(todo)
 
 	if upCheck {
-		respond = "success"
+		resNot.Status = "success"
+		resNot.Notice = "Todo updated"
 	} else {
-		respond = "error"
+		resNot.Status = "success"
+		resNot.Notice = "Todo not updated"
 	}
 
-	CheckErr(err)
+	respond, _ := json.Marshal(resNot)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
@@ -73,19 +75,21 @@ func UpTodo(w http.ResponseWriter, r *http.Request) {
 
 func AddTodo(w http.ResponseWriter, r *http.Request) {
 	var todo NewTodo
-	var respond string
+	var resNot RespondNotice
 	err := json.NewDecoder(r.Body).Decode(&todo)
 	CheckErr(err)
 
-	upCheck := database.Add(todo)
+	addCheck := database.Add(todo)
 
-	if upCheck {
-		respond = "success"
+	if addCheck {
+		resNot.Status = "success"
+		resNot.Notice = "Todo added"
 	} else {
-		respond = "error"
+		resNot.Status = "error"
+		resNot.Notice = "Todo not added"
 	}
 
-	CheckErr(err)
+	respond, _ := json.Marshal(resNot)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
@@ -94,17 +98,21 @@ func AddTodo(w http.ResponseWriter, r *http.Request) {
 
 func DeleteTodo(w http.ResponseWriter, r *http.Request) {
 
-	var respond string
+	var resNot RespondNotice
 	vars := mux.Vars(r)
 	key, _ := strconv.Atoi(vars["id"])
 
 	deleteCheck := database.Delete(key)
 
 	if deleteCheck {
-		respond = "success"
+		resNot.Status = "success"
+		resNot.Notice = "Todo deleted"
 	} else {
-		respond = "error"
+		resNot.Status = "error"
+		resNot.Notice = "Todo not deleted"
 	}
+
+	respond, _ := json.Marshal(resNot)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)

@@ -1,4 +1,5 @@
-# go-todo-app-api
+# Go Todo App Api
+
 Sample Todo App Apis developed in Golang language.
 
 Repository contains SQL file (*./database/tododb.sql*) and Postman Collection (*./golang-todo.postman_collection.json*).

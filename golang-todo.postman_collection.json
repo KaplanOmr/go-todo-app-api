@@ -29,14 +29,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8081/get/1",
+					"raw": "localhost:8081/get/11",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
 						"get",
-						"1"
+						"11"
 					]
 				}
 			},
@@ -49,7 +49,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\" : \"Baslik\",\r\n    \"description\" : \"aciklama\",\r\n    \"status\" : \"open\"\r\n}"
+					"raw": "{\r\n    \"title\" : \"Title Test\",\r\n    \"description\" : \"Desc Title\",\r\n    \"status\" : \"open\"\r\n}"
 				},
 				"url": {
 					"raw": "localhost:8081/add",
@@ -70,14 +70,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8081/getdate/2021-02-27",
+					"raw": "localhost:8081/getdate/2021-02-28",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
 						"getdate",
-						"2021-02-27"
+						"2021-02-28"
 					]
 				}
 			},
@@ -89,14 +89,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8081/delete/3",
+					"raw": "localhost:8081/delete/11",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
 						"delete",
-						"3"
+						"11"
 					]
 				}
 			},
@@ -109,7 +109,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\" : \"Baslik-aa1\",\r\n    \"description\" : \"aciklama 3\",\r\n    \"status\" : \"open\",\r\n    \"id\" : 11\r\n}"
+					"raw": "{\r\n    \"title\" : \"Title Def\",\r\n    \"description\" : \"Desc Def\",\r\n    \"status\" : \"closed\",\r\n    \"id\" : 12\r\n}"
 				},
 				"url": {
 					"raw": "localhost:8081/up",

@@ -1,2 +1,2 @@
 # go-todo-app-api
-Golang Basic Todo Api
+Golang Basic Todo Api Example

@@ -88,15 +88,18 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 12\r\n}"
+				},
 				"url": {
-					"raw": "localhost:8081/delete/11",
+					"raw": "localhost:8081/delete",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"delete",
-						"11"
+						"delete"
 					]
 				}
 			},

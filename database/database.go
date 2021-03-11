@@ -88,7 +88,7 @@ func GetDate(date string) TodoDateMappings {
 	return todoDate
 }
 
-func Add(newTodo NewTodo) bool {
+func Add(todo Todo) bool {
 
 	date := CurrDate()
 
@@ -97,9 +97,9 @@ func Add(newTodo NewTodo) bool {
 
 	insert, err := db.Query(
 		"INSERT INTO todo SET title = ?, description = ?, status = ?, date = ?",
-		newTodo.Title,
-		newTodo.Description,
-		newTodo.Status,
+		todo.Title,
+		todo.Description,
+		todo.Status,
 		date)
 	defer insert.Close()
 
@@ -132,13 +132,13 @@ func Up(todo Todo) bool {
 
 }
 
-func Delete(id int) bool {
+func Delete(todo Todo) bool {
 	db := conn()
 	defer db.Close()
 
 	update, err := db.Query(
 		"DELETE FROM todo WHERE id = ?",
-		id)
+		todo.ID)
 	defer update.Close()
 
 	if err != nil {

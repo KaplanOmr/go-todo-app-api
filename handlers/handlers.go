@@ -74,7 +74,7 @@ func UpTodo(w http.ResponseWriter, r *http.Request) {
 }
 
 func AddTodo(w http.ResponseWriter, r *http.Request) {
-	var todo NewTodo
+	var todo Todo
 	var resNot RespondNotice
 	err := json.NewDecoder(r.Body).Decode(&todo)
 	CheckErr(err)
@@ -98,11 +98,12 @@ func AddTodo(w http.ResponseWriter, r *http.Request) {
 
 func DeleteTodo(w http.ResponseWriter, r *http.Request) {
 
+	var todo Todo
 	var resNot RespondNotice
-	vars := mux.Vars(r)
-	key, _ := strconv.Atoi(vars["id"])
+	err := json.NewDecoder(r.Body).Decode(&todo)
+	CheckErr(err)
 
-	deleteCheck := database.Delete(key)
+	deleteCheck := database.Delete(todo)
 
 	if deleteCheck {
 		resNot.Status = "success"

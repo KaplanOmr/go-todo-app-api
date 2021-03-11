@@ -8,12 +8,6 @@ type Todo struct {
 	Status      string `json:"status"`
 }
 
-type NewTodo struct {
-	Title       string `json:"title"`
-	Description string `json:"description"`
-	Status      string `json:"status"`
-}
-
 type TodoDateMappings struct {
 	Date string `json:"date"`
 	Todo []Todo `json:"todo"`

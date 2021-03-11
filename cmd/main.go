@@ -14,7 +14,7 @@ func main() {
 	r.HandleFunc("/getdate/{date}", GetDateTodo).Methods("GET")
 	r.HandleFunc("/add", AddTodo).Methods("POST")
 	r.HandleFunc("/up", UpTodo).Methods("PUT")
-	r.HandleFunc("/delete/{id}", DeleteTodo).Methods("DELETE")
+	r.HandleFunc("/delete", DeleteTodo).Methods("DELETE")
 
 	serve := &http.Server{
 		Addr:    ":8081",
